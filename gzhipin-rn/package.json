@@ -21,6 +21,7 @@
     "react-navigation": "^2.16.0"
   },
   "devDependencies": {
+    "babel-plugin-import": "^1.10.0",
     "jest-expo": "30.0.0"
   }
 }
