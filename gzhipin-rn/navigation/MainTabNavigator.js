@@ -13,14 +13,18 @@ import LaobanScreenInfo from '../screens/laoban-info/laoban-info';
 import DashenScreen from '../screens/dashen/dashen';
 import DashenScreenInfo from '../screens/dashen-info/dashen-info';
 
-import SettingsScreen from '../screens/SettingsScreen';
+import MessageScreen from '../screens/message/message';
+import ChatScreen from '../screens/chat/chat';
+
+import PersonalScreen from '../screens/personal/personal';
 
 const LaobanStack = createStackNavigator({
   Laoban: LaobanScreen,
+  LaobanInfo: LaobanScreenInfo,
 });
 
-HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
+LaobanStack.navigationOptions = {
+  tabBarLabel: '老板',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -33,12 +37,13 @@ HomeStack.navigationOptions = {
   ),
 };
 
-const LinksStack = createStackNavigator({
-  Links: LinksScreen,
+const DashenStack = createStackNavigator({
+  Dashen: DashenScreen,
+  DashenInfo: DashenScreenInfo,
 });
 
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
+DashenStack.navigationOptions = {
+  tabBarLabel: '大神',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -47,12 +52,26 @@ LinksStack.navigationOptions = {
   ),
 };
 
-const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen,
+const MessageStack = createStackNavigator({
+  Message: MessageScreen,
+  ChatScreen: ChatScreen,
 });
 
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
+MessageStack.navigationOptions = {
+  tabBarLabel: '聊天',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? `ios-options${focused ? '' : '-outline'}` : 'md-options'}
+    />
+  ),
+};
+
+const PersonalStack = createStackNavigator({
+  Personal: PersonalScreen,
+});
+MessagPersonalStackeStack.navigationOptions = {
+  tabBarLabel: '個人',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
